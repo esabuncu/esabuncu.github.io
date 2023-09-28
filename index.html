@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-  </head>
-  <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-        <p>This is my new website which is hosted on GitHub Pages!</p>
-    </main>
-  </body>
+    
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <title>Your Web Page Title</title>
+</head>
+<body>
+
+<div class="tab-container">
+    <button class="tab-button" onclick="openTab('aboutMe')">About Me</button>
+    <button class="tab-button" onclick="openTab('education')">Education</button>
+    <button class="tab-button" onclick="openTab('classwork')">Classwork</button>
+</div>
+
+<div id="aboutMe" class="tab-content">
+    <h2>About Me</h2>
+    <p>This is the About Me section.</p>
+</div>
+
+<div id="education" class="tab-content">
+    <h2>Education</h2>
+    <p>This is the Education section.</p>
+</div>
+
+<div id="classwork" class="tab-content">
+    <h2>Classwork</h2>
+    <p>This is the Classwork section.</p>
+</div>
+
+<script>
+    function openTab(tabName) {
+        var i;
+        var tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+    // Show the default tab (e.g., "About Me") when the page loads
+    openTab('aboutMe');
+</script>
+
+</body>
 </html>
